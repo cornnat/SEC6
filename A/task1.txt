@@ -1,0 +1,22 @@
+##################################################
+# Task 1
+##################################################
+Whats the probability that the nearest star is at distance R?
+
+Define the probability:
+- stars per volume = n
+- finding a star in a differential shell at radius r is related to the Poisson distribution
+
+the probability of no stars within a sphere of radius R is:
+    P_0(R) = exp(-[4/3] * pi * [R**3] * n)
+
+the probability that the nearest star is located exactly at radius R means there are no stars
+within R, but there is at least one in the small shell from R -> R+dR 
+    P(R)dR = P_0(R) * (probability of star in a shell of thickness dR)
+
+the probability of a star appearing in the shell of thickness dR:
+    dP = n * dV * exp(-n * V) 
+    dV = 4 * pi * (R**2) * dR
+
+so P(R) = {P_0(R) * (probability of star in a shell of thickness dR)}/dR
+    p(R) = 4 * pi * (R**2) * n * exp(-[4/3] * pi * [R**3] * n)
